@@ -598,26 +598,87 @@ img{max-width:100%;height:auto;display:block}
 .h-wf-card:nth-child(1){animation-delay:.7s}
 .h-wf-card:nth-child(2){animation-delay:.9s}
 .h-wf-card:nth-child(3){animation-delay:1.1s}
-.h-wf-card:hover{border-color:rgba(107,76,76,.38);background:rgba(107,76,76,.07)}
-.h-wf-topbar{display:flex;align-items:center;gap:5px;padding:6px 8px;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.02)}
+.h-wf-card:hover{border-color:rgba(107,76,76,.38);background:rgba(107,76,76,.05)}
+/* Dashboard layout — sidebar + main */
+.h-wf-dash{display:flex;height:100%}
+.h-wf-nav{width:20px;background:rgba(255,255,255,.03);border-right:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:5px;padding:8px 4px;flex-shrink:0}
+.h-wf-nav-item{height:4px;border-radius:2px;background:rgba(255,255,255,.1)}
+.h-wf-nav-item.act{background:rgba(107,76,76,.55);box-shadow:0 0 4px rgba(107,76,76,.4)}
+.h-wf-main{flex:1;display:flex;flex-direction:column;min-width:0}
+/* Top chrome bar */
+.h-wf-topbar{display:flex;align-items:center;gap:5px;padding:5px 7px;border-bottom:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03)}
 .h-wf-dots{display:flex;gap:3px}
 .h-wf-dots span{width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.14)}
-.h-wf-appname{font-size:8px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.38);margin-left:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.h-wf-body{padding:8px;display:flex;flex-direction:column;gap:4px;min-height:72px}
-.h-wf-ph{height:6px;border-radius:3px;background:rgba(255,255,255,.08)}
-.h-wf-trow{display:flex;gap:3px;align-items:center}
-.h-wf-tcell{height:7px;border-radius:2px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08)}
-.h-wf-tcell.hi{background:rgba(107,76,76,.2);border-color:rgba(107,76,76,.32)}
-.h-wf-tcell.pos{background:rgba(80,160,100,.14);border-color:rgba(80,160,100,.28)}
-.h-wf-bars{display:flex;align-items:flex-end;gap:2px;height:22px}
-.h-wf-bar-el{flex:1;border-radius:2px 2px 0 0;background:linear-gradient(to top,rgba(107,76,76,.5),rgba(190,100,100,.22));border-top:1px solid rgba(107,76,76,.45)}
-.h-wf-avatar-row{display:flex;gap:4px;align-items:center}
-.h-wf-avatar{width:16px;height:16px;border-radius:50%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);flex-shrink:0}
-.h-wf-form-field{height:10px;border-radius:3px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
-.h-wf-btn-row{display:flex;gap:3px}
-.h-wf-btn{height:12px;border-radius:3px;border:1px solid}
-.h-wf-btn.primary{background:rgba(107,76,76,.28);border-color:rgba(107,76,76,.45);flex:2}
-.h-wf-btn.ghost{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.1);flex:1}
+.h-wf-appname{font-size:7.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-left:2px}
+/* Hero metric block */
+.h-wf-hero{padding:8px 8px 6px;display:flex;flex-direction:column;gap:2px;border-bottom:1px solid rgba(255,255,255,.05)}
+.h-wf-hero-val{font-family:var(--serif);font-size:18px;font-weight:400;color:#fff;line-height:1;letter-spacing:-.02em;display:flex;align-items:baseline;gap:5px}
+.h-wf-hero-lbl{font-size:6.5px;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;line-height:1}
+.h-wf-trend{font-size:7.5px;font-weight:700;letter-spacing:.04em;font-family:var(--font-body)}
+.h-wf-trend.up{color:hsl(140,55%,55%)}
+.h-wf-trend.down{color:hsl(4,60%,62%)}
+
+/* CRM: Pipeline funnel */
+.h-wf-pipe{padding:7px;display:flex;flex-direction:column;gap:4px}
+.h-wf-pipe-row{display:flex;align-items:center;gap:5px}
+.h-wf-pipe-lbl{font-size:6px;color:rgba(255,255,255,.45);letter-spacing:.04em;width:24px;text-transform:uppercase;flex-shrink:0;font-weight:600}
+.h-wf-pipe-bar{flex:1;height:6px;background:rgba(255,255,255,.05);border-radius:9999px;overflow:hidden;position:relative}
+.h-wf-pipe-fill{height:100%;border-radius:9999px;background:linear-gradient(90deg,hsl(220,70%,55%),hsl(190,65%,55%))}
+.h-wf-pipe-fill.s2{background:linear-gradient(90deg,hsl(190,65%,55%),hsl(160,60%,50%))}
+.h-wf-pipe-fill.s3{background:linear-gradient(90deg,hsl(140,55%,50%),hsl(50,75%,55%))}
+.h-wf-pipe-fill.s4{background:linear-gradient(90deg,hsl(30,75%,55%),hsl(4,65%,60%))}
+.h-wf-pipe-num{font-size:7px;font-weight:700;color:rgba(255,255,255,.7);font-variant-numeric:tabular-nums;width:14px;text-align:right;flex-shrink:0}
+
+/* Finance: Sparkline chart */
+.h-wf-chart{padding:6px 8px 8px;position:relative}
+.h-wf-chart svg{width:100%;height:50px;display:block}
+.h-wf-chart-axis{display:flex;justify-content:space-between;margin-top:2px}
+.h-wf-chart-axis span{font-size:5.5px;color:rgba(255,255,255,.3);letter-spacing:.06em}
+.h-wf-mini-stats{display:flex;justify-content:space-between;padding:0 8px 6px;gap:6px}
+.h-wf-mini-stat{flex:1;display:flex;flex-direction:column;gap:1px}
+.h-wf-mini-stat-val{font-size:9px;font-weight:700;color:rgba(255,255,255,.85);line-height:1;font-variant-numeric:tabular-nums}
+.h-wf-mini-stat-lbl{font-size:5.5px;color:rgba(255,255,255,.32);letter-spacing:.06em;text-transform:uppercase;line-height:1}
+
+/* HR: Avatar grid + status */
+.h-wf-people{padding:7px;display:flex;flex-direction:column;gap:6px}
+.h-wf-avgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:3px}
+.h-wf-av{aspect-ratio:1;border-radius:50%;border:1px solid rgba(255,255,255,.12)}
+.h-wf-av.a1{background:linear-gradient(135deg,hsl(4,55%,60%),hsl(14,55%,52%))}
+.h-wf-av.a2{background:linear-gradient(135deg,hsl(36,55%,58%),hsl(24,55%,50%))}
+.h-wf-av.a3{background:linear-gradient(135deg,hsl(190,40%,55%),hsl(210,45%,48%))}
+.h-wf-av.a4{background:linear-gradient(135deg,hsl(140,40%,50%),hsl(160,45%,42%))}
+.h-wf-av.a5{background:linear-gradient(135deg,hsl(270,40%,58%),hsl(290,40%,52%))}
+.h-wf-av.a6{background:linear-gradient(135deg,hsl(220,40%,55%),hsl(240,40%,50%))}
+.h-wf-av.empty{background:rgba(255,255,255,.04);border:1px dashed rgba(255,255,255,.18)}
+.h-wf-pills{display:flex;gap:3px;flex-wrap:wrap}
+.h-wf-pill{font-size:6px;font-weight:700;letter-spacing:.04em;padding:2px 5px;border-radius:9999px;text-transform:uppercase}
+.h-wf-pill.live{background:rgba(34,197,94,.15);color:hsl(140,55%,60%);border:1px solid rgba(34,197,94,.3)}
+.h-wf-pill.warn{background:rgba(234,179,8,.13);color:hsl(45,75%,60%);border:1px solid rgba(234,179,8,.3)}
+.h-wf-pill.info{background:rgba(59,130,246,.13);color:hsl(215,75%,65%);border:1px solid rgba(59,130,246,.3)}
+/* CRM deal value & KPI row */
+.h-wf-pipe-val{font-size:5.5px;color:rgba(255,255,255,.32);font-variant-numeric:tabular-nums;width:22px;text-align:right;flex-shrink:0;letter-spacing:-.01em}
+.h-wf-pipe-kpi{display:flex;justify-content:space-between;border-top:1px solid rgba(255,255,255,.06);padding:4px 7px 3px;gap:4px}
+.h-wf-pipe-kpi-item{display:flex;flex-direction:column;gap:1px}
+.h-wf-pipe-kpi-val{font-size:7.5px;font-weight:700;color:rgba(255,255,255,.7);line-height:1;font-variant-numeric:tabular-nums}
+.h-wf-pipe-kpi-lbl{font-size:5px;color:rgba(255,255,255,.3);letter-spacing:.05em;text-transform:uppercase;line-height:1}
+/* HR dept breakdown */
+.h-wf-dept{padding:6px 7px;display:flex;flex-direction:column;gap:3.5px}
+.h-wf-dept-row{display:flex;align-items:center;gap:4px}
+.h-wf-dept-lbl{font-size:5.5px;color:rgba(255,255,255,.42);letter-spacing:.04em;width:18px;text-transform:uppercase;flex-shrink:0;font-weight:600}
+.h-wf-dept-bar{flex:1;height:5px;background:rgba(255,255,255,.05);border-radius:9999px;overflow:hidden}
+.h-wf-dept-fill{height:100%;border-radius:9999px}
+.h-wf-dept-fill.d1{background:linear-gradient(90deg,hsl(265,52%,68%),hsl(245,52%,64%))}
+.h-wf-dept-fill.d2{background:linear-gradient(90deg,hsl(265,48%,62%),hsl(245,46%,59%))}
+.h-wf-dept-fill.d3{background:linear-gradient(90deg,hsl(265,44%,57%),hsl(245,42%,54%))}
+.h-wf-dept-fill.d4{background:linear-gradient(90deg,hsl(265,40%,52%),hsl(245,38%,50%))}
+.h-wf-dept-fill.d5{background:linear-gradient(90deg,hsl(265,36%,46%),hsl(245,34%,44%))}
+.h-wf-dept-num{font-size:6px;font-weight:700;color:rgba(255,255,255,.5);font-variant-numeric:tabular-nums;width:12px;text-align:right;flex-shrink:0}
+.h-wf-hr-stats{display:flex;border-top:1px solid rgba(255,255,255,.06);padding:5px 6px 4px;gap:0}
+.h-wf-hr-stat{flex:1;display:flex;flex-direction:column;gap:1px;align-items:center;position:relative}
+.h-wf-hr-stat+.h-wf-hr-stat::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:rgba(255,255,255,.07)}
+.h-wf-hr-stat-val{font-size:8px;font-weight:700;color:rgba(255,255,255,.78);line-height:1;font-variant-numeric:tabular-nums}
+.h-wf-hr-stat-lbl{font-size:4.5px;color:rgba(255,255,255,.3);letter-spacing:.04em;text-transform:uppercase;line-height:1.2;text-align:center}
+/* Footer badge */
 .h-wf-foot{padding:5px 8px;border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:space-between}
 .h-wf-badge{display:flex;align-items:center;gap:4px;font-size:8px;font-weight:700;color:var(--rose);letter-spacing:.06em}
 .h-wf-badge-dot{width:4px;height:4px;border-radius:50%;background:var(--rose);animation:pulse 2s infinite;box-shadow:0 0 6px hsla(4,55%,65%,.6)}
@@ -747,32 +808,65 @@ img{max-width:100%;height:auto;display:block}
 
           <div class="h-wf-grid">
 
-            <!-- App 1: CRM -->
+            <!-- App 1: CRM — Sales Pipeline Funnel -->
             <div class="h-wf-card">
-              <div class="h-wf-topbar">
-                <div class="h-wf-dots"><span></span><span></span><span></span></div>
-                <span class="h-wf-appname">CRM</span>
-              </div>
-              <div class="h-wf-body">
-                <div class="h-wf-ph" style="width:80%"></div>
-                <div class="h-wf-trow">
-                  <div class="h-wf-tcell" style="flex:3"></div>
-                  <div class="h-wf-tcell hi" style="flex:1"></div>
+              <div class="h-wf-dash">
+                <div class="h-wf-nav">
+                  <div class="h-wf-nav-item act"></div>
+                  <div class="h-wf-nav-item"></div>
+                  <div class="h-wf-nav-item"></div>
+                  <div class="h-wf-nav-item"></div>
+                  <div class="h-wf-nav-item"></div>
                 </div>
-                <div class="h-wf-trow">
-                  <div class="h-wf-tcell" style="flex:3"></div>
-                  <div class="h-wf-tcell pos" style="flex:1"></div>
-                </div>
-                <div class="h-wf-trow">
-                  <div class="h-wf-tcell" style="flex:3"></div>
-                  <div class="h-wf-tcell" style="flex:1"></div>
-                </div>
-                <div class="h-wf-bars">
-                  <div class="h-wf-bar-el" style="height:55%"></div>
-                  <div class="h-wf-bar-el" style="height:80%"></div>
-                  <div class="h-wf-bar-el" style="height:45%"></div>
-                  <div class="h-wf-bar-el" style="height:100%"></div>
-                  <div class="h-wf-bar-el" style="height:65%"></div>
+                <div class="h-wf-main">
+                  <div class="h-wf-topbar">
+                    <div class="h-wf-dots"><span></span><span></span><span></span></div>
+                    <span class="h-wf-appname">Sales CRM</span>
+                  </div>
+                  <div class="h-wf-hero">
+                    <div class="h-wf-hero-val">47<span class="h-wf-trend up">↑12%</span></div>
+                    <div class="h-wf-hero-lbl">Active Leads</div>
+                  </div>
+                  <div class="h-wf-pipe">
+                    <div class="h-wf-pipe-row">
+                      <span class="h-wf-pipe-lbl">Lead</span>
+                      <div class="h-wf-pipe-bar"><div class="h-wf-pipe-fill" style="width:95%"></div></div>
+                      <span class="h-wf-pipe-num">47</span>
+                      <span class="h-wf-pipe-val">$1.2M</span>
+                    </div>
+                    <div class="h-wf-pipe-row">
+                      <span class="h-wf-pipe-lbl">Qual</span>
+                      <div class="h-wf-pipe-bar"><div class="h-wf-pipe-fill s2" style="width:62%"></div></div>
+                      <span class="h-wf-pipe-num">28</span>
+                      <span class="h-wf-pipe-val">$840K</span>
+                    </div>
+                    <div class="h-wf-pipe-row">
+                      <span class="h-wf-pipe-lbl">Prop</span>
+                      <div class="h-wf-pipe-bar"><div class="h-wf-pipe-fill s3" style="width:38%"></div></div>
+                      <span class="h-wf-pipe-num">17</span>
+                      <span class="h-wf-pipe-val">$380K</span>
+                    </div>
+                    <div class="h-wf-pipe-row">
+                      <span class="h-wf-pipe-lbl">Won</span>
+                      <div class="h-wf-pipe-bar"><div class="h-wf-pipe-fill s4" style="width:24%"></div></div>
+                      <span class="h-wf-pipe-num">12</span>
+                      <span class="h-wf-pipe-val">$290K</span>
+                    </div>
+                  </div>
+                  <div class="h-wf-pipe-kpi">
+                    <div class="h-wf-pipe-kpi-item">
+                      <div class="h-wf-pipe-kpi-val">25.5%</div>
+                      <div class="h-wf-pipe-kpi-lbl">Conv. Rate</div>
+                    </div>
+                    <div class="h-wf-pipe-kpi-item">
+                      <div class="h-wf-pipe-kpi-val">$24K</div>
+                      <div class="h-wf-pipe-kpi-lbl">Avg Deal</div>
+                    </div>
+                    <div class="h-wf-pipe-kpi-item">
+                      <div class="h-wf-pipe-kpi-val">18d</div>
+                      <div class="h-wf-pipe-kpi-lbl">Avg Cycle</div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="h-wf-foot">
@@ -781,27 +875,56 @@ img{max-width:100%;height:auto;display:block}
               </div>
             </div>
 
-            <!-- App 2: Finance ERP -->
+            <!-- App 2: Finance — Revenue Chart -->
             <div class="h-wf-card">
-              <div class="h-wf-topbar">
-                <div class="h-wf-dots"><span></span><span></span><span></span></div>
-                <span class="h-wf-appname">Finance</span>
-              </div>
-              <div class="h-wf-body">
-                <div class="h-wf-ph" style="width:65%"></div>
-                <div class="h-wf-trow" style="margin-top:2px">
-                  <div class="h-wf-tcell" style="flex:3;height:8px"></div>
-                  <div class="h-wf-tcell pos" style="flex:1;height:8px"></div>
+              <div class="h-wf-dash">
+                <div class="h-wf-nav">
+                  <div class="h-wf-nav-item"></div>
+                  <div class="h-wf-nav-item act"></div>
+                  <div class="h-wf-nav-item"></div>
+                  <div class="h-wf-nav-item"></div>
+                  <div class="h-wf-nav-item"></div>
                 </div>
-                <div class="h-wf-trow">
-                  <div class="h-wf-tcell" style="flex:3;height:8px"></div>
-                  <div class="h-wf-tcell hi" style="flex:1;height:8px"></div>
+                <div class="h-wf-main">
+                  <div class="h-wf-topbar">
+                    <div class="h-wf-dots"><span></span><span></span><span></span></div>
+                    <span class="h-wf-appname">Finance</span>
+                  </div>
+                  <div class="h-wf-hero">
+                    <div class="h-wf-hero-val">$2.1M<span class="h-wf-trend up">↑8.4%</span></div>
+                    <div class="h-wf-hero-lbl">Q4 Revenue</div>
+                  </div>
+                  <div class="h-wf-chart">
+                    <svg viewBox="0 0 100 40" preserveAspectRatio="none">
+                      <defs>
+                        <linearGradient id="finGrad" x1="0" y1="0" x2="0" y2="1">
+                          <stop offset="0%" stop-color="hsl(4,55%,65%)" stop-opacity="0.4"/>
+                          <stop offset="100%" stop-color="hsl(4,55%,65%)" stop-opacity="0"/>
+                        </linearGradient>
+                      </defs>
+                      <path d="M0,30 L14,25 L28,28 L42,18 L56,22 L70,12 L84,15 L100,6 L100,40 L0,40 Z" fill="url(#finGrad)"/>
+                      <path d="M0,30 L14,25 L28,28 L42,18 L56,22 L70,12 L84,15 L100,6" stroke="hsl(4,55%,65%)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                      <circle cx="100" cy="6" r="2" fill="hsl(4,55%,65%)"/>
+                    </svg>
+                    <div class="h-wf-chart-axis">
+                      <span>JAN</span><span>MAR</span><span>JUN</span><span>SEP</span><span>DEC</span>
+                    </div>
+                  </div>
+                  <div class="h-wf-mini-stats">
+                    <div class="h-wf-mini-stat">
+                      <div class="h-wf-mini-stat-val">$485K</div>
+                      <div class="h-wf-mini-stat-lbl">MRR</div>
+                    </div>
+                    <div class="h-wf-mini-stat">
+                      <div class="h-wf-mini-stat-val">94%</div>
+                      <div class="h-wf-mini-stat-lbl">Margin</div>
+                    </div>
+                    <div class="h-wf-mini-stat">
+                      <div class="h-wf-mini-stat-val">$1.2K</div>
+                      <div class="h-wf-mini-stat-lbl">ARPU</div>
+                    </div>
+                  </div>
                 </div>
-                <div class="h-wf-trow">
-                  <div class="h-wf-tcell" style="flex:3;height:8px"></div>
-                  <div class="h-wf-tcell pos" style="flex:1;height:8px"></div>
-                </div>
-                <div class="h-wf-ph" style="width:50%;margin-top:2px"></div>
               </div>
               <div class="h-wf-foot">
                 <span class="h-wf-badge"><span class="h-wf-badge-dot"></span>+1 agent</span>
@@ -809,25 +932,66 @@ img{max-width:100%;height:auto;display:block}
               </div>
             </div>
 
-            <!-- App 3: HR Portal -->
+            <!-- App 3: HR Hub — Headcount & Dept Breakdown -->
             <div class="h-wf-card">
-              <div class="h-wf-topbar">
-                <div class="h-wf-dots"><span></span><span></span><span></span></div>
-                <span class="h-wf-appname">HR Portal</span>
-              </div>
-              <div class="h-wf-body">
-                <div class="h-wf-avatar-row">
-                  <div class="h-wf-avatar"></div>
-                  <div style="flex:1;display:flex;flex-direction:column;gap:3px">
-                    <div class="h-wf-ph" style="width:80%;height:5px"></div>
-                    <div class="h-wf-ph" style="width:55%;height:4px"></div>
-                  </div>
+              <div class="h-wf-dash">
+                <div class="h-wf-nav">
+                  <div class="h-wf-nav-item"></div>
+                  <div class="h-wf-nav-item"></div>
+                  <div class="h-wf-nav-item act"></div>
+                  <div class="h-wf-nav-item"></div>
+                  <div class="h-wf-nav-item"></div>
                 </div>
-                <div class="h-wf-form-field" style="margin-top:2px"></div>
-                <div class="h-wf-form-field" style="width:75%"></div>
-                <div class="h-wf-btn-row" style="margin-top:2px">
-                  <div class="h-wf-btn primary"></div>
-                  <div class="h-wf-btn ghost"></div>
+                <div class="h-wf-main">
+                  <div class="h-wf-topbar">
+                    <div class="h-wf-dots"><span></span><span></span><span></span></div>
+                    <span class="h-wf-appname">HR Hub</span>
+                  </div>
+                  <div class="h-wf-hero">
+                    <div class="h-wf-hero-val">312<span class="h-wf-trend up">↑5</span></div>
+                    <div class="h-wf-hero-lbl">Total Headcount</div>
+                  </div>
+                  <div class="h-wf-dept">
+                    <div class="h-wf-dept-row">
+                      <span class="h-wf-dept-lbl">Eng</span>
+                      <div class="h-wf-dept-bar"><div class="h-wf-dept-fill d1" style="width:100%"></div></div>
+                      <span class="h-wf-dept-num">87</span>
+                    </div>
+                    <div class="h-wf-dept-row">
+                      <span class="h-wf-dept-lbl">Sales</span>
+                      <div class="h-wf-dept-bar"><div class="h-wf-dept-fill d2" style="width:74%"></div></div>
+                      <span class="h-wf-dept-num">64</span>
+                    </div>
+                    <div class="h-wf-dept-row">
+                      <span class="h-wf-dept-lbl">Ops</span>
+                      <div class="h-wf-dept-bar"><div class="h-wf-dept-fill d3" style="width:48%"></div></div>
+                      <span class="h-wf-dept-num">42</span>
+                    </div>
+                    <div class="h-wf-dept-row">
+                      <span class="h-wf-dept-lbl">Mktg</span>
+                      <div class="h-wf-dept-bar"><div class="h-wf-dept-fill d4" style="width:40%"></div></div>
+                      <span class="h-wf-dept-num">35</span>
+                    </div>
+                    <div class="h-wf-dept-row">
+                      <span class="h-wf-dept-lbl">Fin</span>
+                      <div class="h-wf-dept-bar"><div class="h-wf-dept-fill d5" style="width:21%"></div></div>
+                      <span class="h-wf-dept-num">18</span>
+                    </div>
+                  </div>
+                  <div class="h-wf-hr-stats">
+                    <div class="h-wf-hr-stat">
+                      <div class="h-wf-hr-stat-val">5</div>
+                      <div class="h-wf-hr-stat-lbl">Onboarding</div>
+                    </div>
+                    <div class="h-wf-hr-stat">
+                      <div class="h-wf-hr-stat-val">8</div>
+                      <div class="h-wf-hr-stat-lbl">Open Roles</div>
+                    </div>
+                    <div class="h-wf-hr-stat">
+                      <div class="h-wf-hr-stat-val">97%</div>
+                      <div class="h-wf-hr-stat-lbl">Retention</div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div class="h-wf-foot">
